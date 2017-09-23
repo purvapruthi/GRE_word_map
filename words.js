@@ -79,5 +79,7 @@ d3.json("words.json", function(json) {
     node.attr("cx", function(d) { return d.x = Math.max(d.name.length * 2.5, Math.min(w - d.name.length * 2.5, d.x)); }) 
         .attr("cy", function(d) { return d.y = Math.max(d.name.length * 2.5, Math.min(h - d.name.length * 2.5, d.y)); });
     node.attr("transform", function(d){return "translate("+ (1.6*d.x - w*0.3)+","+d.y+")"});
+      
+    force.stop()
   });
 });
