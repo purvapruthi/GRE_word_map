@@ -43,6 +43,8 @@ d3.json("words.json", function(json) {
                 .style("opacity", 0);
           link.filter(function (d) { return d.source.group === d.target.group && d.source.group === group_desired; })
                 .style("visibility", "visible");
+          d3.select("#info").text(d.meaning);
+
         })
         .on("mouseout", function (d) {
           group_desired = d.group
@@ -52,6 +54,8 @@ d3.json("words.json", function(json) {
                 .style("visibility", "hidden");      
           node.filter(function (d) { return d.group != group_desired; })
                 .style("opacity", 1);
+
+
         });
 
   node.append("circle")

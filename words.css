@@ -7,4 +7,12 @@ line.link {
   stroke: #999;
   stroke-opacity: .6;
 }
-© 2017 GitHub, Inc.
+.meaning {
+        line-height: 32px;
+        text-align: center;
+        font-family: arial;
+        font-size: 17px;
+        font-weight: 600;
+        text-indent: 30px;
+        overflow: hidden;
+        }
