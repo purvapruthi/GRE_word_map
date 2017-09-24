@@ -7,7 +7,7 @@ var vis = d3.select("#chart")
     .attr("width", w)
     .attr("height", h);
 
-d3.json("force.json", function(json) {
+d3.json("words.json", function(json) {
   var force = d3.layout.force()
       .charge(-120)
       .linkDistance(30)
@@ -79,5 +79,7 @@ d3.json("force.json", function(json) {
     node.attr("cx", function(d) { return d.x = Math.max(d.name.length * 2.5, Math.min(w - d.name.length * 2.5, d.x)); }) 
         .attr("cy", function(d) { return d.y = Math.max(d.name.length * 2.5, Math.min(h - d.name.length * 2.5, d.y)); });
     node.attr("transform", function(d){return "translate("+ (1.6*d.x - w*0.3)+","+d.y+")"});
+      
+    force.stop()
   });
 });
