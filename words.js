@@ -9,7 +9,8 @@ var vis = d3.select("#chart")
 
 d3.json("words.json", function(json) {
   var force = d3.layout.force()
-      .charge(-120)
+      .charge(-300)
+      .gravity(0.85)
       .linkDistance(30)
       .nodes(json.nodes)
       .links(json.links)
@@ -35,7 +36,7 @@ d3.json("words.json", function(json) {
       .style("visibility", function (d) {
           return d.colour === 'lightblue' ? "visible" : "hidden";
         })
-        .on("mouseover", function (d) {
+        .on("click", function (d) {
           group_desired = d.group
           node.filter(function (d) { return d.group === group_desired; })
                 .style("visibility", "visible");
@@ -46,7 +47,7 @@ d3.json("words.json", function(json) {
           d3.select("#info").text(d.meaning);
 
         })
-        .on("mouseout", function (d) {
+        .on("dblclick", function (d) {
           group_desired = d.group
           node.filter(function (d) { return d.group === group_desired && d.colour != 'lightblue'; })
                 .style("visibility", "hidden");
