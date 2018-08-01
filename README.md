@@ -5,7 +5,7 @@ and it is difficult to come back to known words while doing flashwords. Creating
 (GRE word, synonyms and antonyms). So this project creates interactive wordmap for GRE words using Python and D3 in JS.
 
 This project contains 4 files -
-words.json - It stores the infomration about the words in graph format. Related words are linked with an edge.
+words.json - It stores the information about the words in graph format. Related words are linked with an edge.
 words.js - Using D3 in JS, an interactive visualization for words is created.
 words.html - HTML web page to generate the map.
 words.css - Includes styling.
